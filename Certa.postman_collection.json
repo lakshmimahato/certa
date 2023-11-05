@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "5eec33ed-792c-404b-b940-8c74f2aaa6cd",
+		"name": "Certa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "weather test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify Lat and Long\", function() {",
+							"    pm.expect(pm.response.json().coord.lon).to.eql(-0.13);",
+							"    pm.expect(pm.response.json().coord.lat).to.eql(51.51);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6 907d289e10d714a6e88b30761fae22",
+					"protocol": "https",
+					"host": [
+						"samples",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "London,uk"
+						},
+						{
+							"key": "appid",
+							"value": "b6 907d289e10d714a6e88b30761fae22"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
